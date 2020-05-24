@@ -1,0 +1,238 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 6,
+    "passes": 2,
+    "pending": 0,
+    "failures": 4,
+    "start": "2020-05-24T19:57:57.683Z",
+    "end": "2020-05-24T19:58:46.726Z",
+    "duration": 49043,
+    "testsRegistered": 6,
+    "passPercent": 33.33333333333333,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "44781582-f7f2-44e0-86c4-cd6f63ef01da",
+      "title": "",
+      "fullFile": "cypress/integration/test.js",
+      "file": "cypress/integration/test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9e851f92-bce0-41c1-b4b8-d392272f1df2",
+          "title": "User Authentication",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User can register for new account",
+              "fullTitle": "User Authentication User can register for new account",
+              "timedOut": null,
+              "duration": 2356,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var userOne = new _newUser[\"default\"]();\ncy.visit('/');\ncy.get(_nav[\"default\"].REGISTER).click();\ncy.url().should('include', '/register');\ncy.get(_register[\"default\"].FIRST_NAME).type(userOne.firstName);\ncy.get(_register[\"default\"].LAST_NAME).type(userOne.lastName);\ncy.get(_register[\"default\"].EMAIL).type(userOne.email);\ncy.get(_register[\"default\"].PASSWORD).type(userOne.password);\ncy.get(_register[\"default\"].PASSWORD_CONFIRMATION).type(userOne.passwordConfirmation);\ncy.get(_register[\"default\"].SUBMIT).click(); // cy.url().should('include', '/login');",
+              "err": {},
+              "uuid": "8d820423-be83-404e-bd9a-bf6f33289d71",
+              "parentUUID": "9e851f92-bce0-41c1-b4b8-d392272f1df2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User can login",
+              "fullTitle": "User Authentication User can login",
+              "timedOut": null,
+              "duration": 7099,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var userOne = new _newUser[\"default\"]();\ncy.visit('/');\ncy.registerNewUser(userOne);\ncy.get(_nav[\"default\"].LOGIN).click();\ncy.url().should('include', '/login');\ncy.get(_login[\"default\"].EMAIL).type(userOne.email);\ncy.get(_login[\"default\"].PASSWORD).type(userOne.password);\ncy.get(_login[\"default\"].SUBMIT).click();\ncy.url().should('include', '/dashboard');",
+              "err": {
+                "message": "AssertionError: Timed out retrying: expected 'https://mernolithic-staging.herokuapp.com/login' to include '/dashboard'",
+                "estack": "AssertionError: Timed out retrying: expected 'https://mernolithic-staging.herokuapp.com/login' to include '/dashboard'\n    at applyChainer (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:131898:32)\n    at https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:131940:16\n    at arrayReduce (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:18578:21)\n    at Function.reduce (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:27576:14)\n    at applyChainers (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:131929:22)\n    at tryCatcher (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:9065:23)\n    at Function.Promise.attempt.Promise.try (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:6339:29)\n    at Context.shouldFn (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:131946:26)\n    at Context.should (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:131964:23)\n    at https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:127819:39\n    at assertions (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:128079:14)\n    at tryCatcher (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:9065:23)\n    at Object.gotValue (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:8209:18)\n    at Object.gotAccum (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:8196:25)\n    at Object.tryCatcher (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:9065:23)\n    at Promise._settlePromiseFromHandler (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:7000:31)",
+                "diff": null
+              },
+              "uuid": "0d911ad9-9898-4f45-8732-58c0a09075f2",
+              "parentUUID": "9e851f92-bce0-41c1-b4b8-d392272f1df2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Can logout",
+              "fullTitle": "User Authentication Can logout",
+              "timedOut": null,
+              "duration": 7229,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var userOne = new _newUser[\"default\"]();\ncy.visit('/');\ncy.registerNewUser(userOne);\ncy.login(userOne);\ncy.get(_nav[\"default\"].LOGOUT).click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying: Expected to find element: `[data-test=\"logout-button\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying: Expected to find element: `[data-test=\"logout-button\"]`, but never found it.\n    at ensureExistence (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:137673:32)\n    at Object.ensureElExistence (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:137691:12)\n    at ensureExistence (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:127867:23)\n    at onFailFn (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:127905:9)\n    at tryCatcher (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:9065:23)\n    at Promise._settlePromiseFromHandler (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:7000:31)\n    at Promise._settlePromise (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:7057:18)\n    at Promise._settlePromise0 (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:7102:10)\n    at Promise._settlePromises (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:7178:18)\n    at _drainQueueStep (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:3772:12)\n    at _drainQueue (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:3765:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:3781:5)\n    at Async.drainQueues (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:3651:14)",
+                "diff": null
+              },
+              "uuid": "f3725f0a-9c84-4fa2-93a5-1fe62d148a2f",
+              "parentUUID": "9e851f92-bce0-41c1-b4b8-d392272f1df2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Non-authenticated user will be redirect to login from protected route",
+              "fullTitle": "User Authentication Non-authenticated user will be redirect to login from protected route",
+              "timedOut": null,
+              "duration": 686,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/dashboard');\ncy.url().should('contain', '/login');",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://mernolithic-staging.herokuapp.com/dashboard\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://mernolithic-staging.herokuapp.com/dashboard\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n    at cypressErr (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:146621:16)\n    at cypressErrByPath (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:146630:10)\n    at Object.throwErrByPath (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:146593:11)\n    at https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:134813:34\n    at visitFailedByErr (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:134316:12)\n    at https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:134794:22\n    at tryCatcher (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:9065:23)\n    at Promise._settlePromiseFromHandler (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:7000:31)\n    at Promise._settlePromise (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:7057:18)\n    at Promise._settlePromise0 (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:7102:10)\n    at Promise._settlePromises (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:7178:18)\n    at _drainQueueStep (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:3772:12)\n    at _drainQueue (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:3765:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:3781:5)\n    at Async.drainQueues (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:3651:14)",
+                "diff": null
+              },
+              "uuid": "9f48ace6-ccc6-424d-94ed-ea4252ce91b0",
+              "parentUUID": "9e851f92-bce0-41c1-b4b8-d392272f1df2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8d820423-be83-404e-bd9a-bf6f33289d71"
+          ],
+          "failures": [
+            "0d911ad9-9898-4f45-8732-58c0a09075f2",
+            "f3725f0a-9c84-4fa2-93a5-1fe62d148a2f",
+            "9f48ace6-ccc6-424d-94ed-ea4252ce91b0"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 17370,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "5f69d7d3-bd81-46e2-9730-f81dfb89c195",
+          "title": "API - Authentication",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Can create user",
+              "fullTitle": "API - Authentication Can create user",
+              "timedOut": null,
+              "duration": 204,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('POST', \"\".concat(Cypress.config('apiUrl'), \"/auth/user\"), userThree).then(function (response) {\n  // response.body is automatically serialized into JSON\n  expect(response.body).to.have.property('firstName', userThree.firstName); // true\n});",
+              "err": {},
+              "uuid": "c12ea8e2-909d-43d1-a553-d79beb1c98a0",
+              "parentUUID": "5f69d7d3-bd81-46e2-9730-f81dfb89c195",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Can authenticate user",
+              "fullTitle": "API - Authentication Can authenticate user",
+              "timedOut": null,
+              "duration": 30399,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('POST', \"\".concat(Cypress.config('apiUrl'), \"/auth/authenticate\"), {\n  email: userThree.email,\n  password: userThree.password\n}).then(function (response) {\n  expect(response.body).to.equal('OK');\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` timed out waiting `30000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: POST\nURL: https://mernolithic-staging.herokuapp.com/auth/authenticate\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` timed out waiting `30000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: POST\nURL: https://mernolithic-staging.herokuapp.com/auth/authenticate\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request\n    at cypressErr (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:146621:16)\n    at cypressErrByPath (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:146630:10)\n    at Object.throwErrByPath (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:146593:11)\n    at https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:135814:26\n    at tryCatcher (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:9065:23)\n    at https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:4187:41\n    at tryCatcher (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:9065:23)\n    at Promise._settlePromiseFromHandler (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:7000:31)\n    at Promise._settlePromise (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:7057:18)\n    at Promise._settlePromise0 (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:7102:10)\n    at Promise._settlePromises (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:7178:18)\n    at _drainQueueStep (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:3772:12)\n    at _drainQueue (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:3765:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:3781:5)\n    at Async.drainQueues (https://mernolithic-staging.herokuapp.com/__cypress/runner/cypress_runner.js:3651:14)",
+                "diff": null
+              },
+              "uuid": "06b8be3e-2f91-4a78-94de-9285d5efc6a6",
+              "parentUUID": "5f69d7d3-bd81-46e2-9730-f81dfb89c195",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c12ea8e2-909d-43d1-a553-d79beb1c98a0"
+          ],
+          "failures": [
+            "06b8be3e-2f91-4a78-94de-9285d5efc6a6"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 30603,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/integration/reports/mocha",
+        "quiet": true,
+        "html": false,
+        "overwrite": false,
+        "json": true
+      },
+      "version": "4.1.0"
+    }
+  }
+}

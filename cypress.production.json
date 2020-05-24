@@ -1,0 +1,23 @@
+{
+  "baseUrl": "https://mernolithic.herokuapp.com",
+  "reporter": "./node_modules/mochawesome/src/mochawesome.js",
+  "apiUrl": "https://mernolithic.herokuapp.com",
+  "env": {
+    "user_firstName": "Charles",
+    "user_lastName": "Brady",
+    "user_email": "charlesmbrady+test@gmail.com",
+    "user_password": "password1"
+  },
+  "reporterOptions": {
+    "reportDir": "cypress/reports/integration/reports/mocha",
+    "quiet": true,
+    "html": false,
+    "overwrite": false,
+    "json": true
+  },
+  "videosFolder": "cypress/reports/integration/public/videos",
+  "screenshotsFolder": "cypress/reports/integration/public/screenshots",
+  "videoCompression": false,
+  "browser": "electron",
+  "chromeWebSecurity": false
+}

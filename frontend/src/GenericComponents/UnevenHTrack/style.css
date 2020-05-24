@@ -1,0 +1,10 @@
+.unevenTrack {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-flow: column;
+}
+
+.trackItemContainer {
+  display: grid;
+  align-items: center;
+}

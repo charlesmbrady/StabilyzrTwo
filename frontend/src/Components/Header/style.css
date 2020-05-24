@@ -1,0 +1,18 @@
+.header {
+  background: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0px 1px 15px lightgray;
+}
+.headerLink {
+  text-decoration: none;
+  padding: 1rem;
+}
+.logo {
+  padding-left: 15px;
+}
+
+.home-link {
+  text-decoration: none;
+}

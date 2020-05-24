@@ -1,0 +1,225 @@
+# Javascript Node CircleCI 2.0 configuration file
+defaults: &defaults
+  docker:
+    - image: circleci/node:12.16.3-browsers
+    - image: circleci/mysql:8.0.4
+      environment:
+        TEST_DATABASE_URL: mysql://root@localhost/circle_test
+    - image: cypress/base:8
+
+  working_directory: ~/MERNolithic_sql
+
+version: 2
+jobs:
+  build:
+    <<: *defaults
+
+    steps:
+      - checkout
+      - run:
+          name: Install general dependencies
+          command: yarn install
+      - run:
+          name: Install frontend packages
+          command: cd frontend && yarn install
+      - run:
+          name: Install backend packages
+          command: cd backend && yarn install
+      - run:
+          name: Build frontend
+          command: cd frontend && yarn build
+
+  test_reports_and_coverage:
+    <<: *defaults
+
+    steps:
+      - checkout
+      - run:
+          name: install general dependencies
+          command: yarn install
+      - run:
+          name: install frontend dependencies
+          command: cd frontend && yarn install
+      - run:
+          name: Run cypress tests
+          command: yarn test:create-reports-local
+      - run:
+          name: Test line coverage threshold
+          command: yarn get-coverage
+      - store_artifacts:
+          path: coverage/lcov-report
+      - store_artifacts:
+          path: cypress/reports/integration/public/
+
+  cypress_tests:
+    <<: *defaults
+
+    steps:
+      - checkout
+      - run:
+          name: install general dependencies
+          command: yarn install
+      - run:
+          name: install frontend dependencies
+          command: cd frontend && yarn install
+      - run:
+          name: Run cypress tests
+          command: yarn ci:test:cy:local
+
+  test_staging:
+    <<: *defaults
+
+    steps:
+      - checkout
+      - run:
+          name: install general dependencies
+          command: yarn install
+      - run:
+          name: Run cypress tests against the staging environment
+          command: yarn cy:run-ci-staging
+
+  test_reports_staging:
+    <<: *defaults
+
+    steps:
+      - checkout
+      - run:
+          name: install general dependencies
+          command: yarn install
+      - run:
+          name: Run cypress tests
+          command: yarn test:create-reports-staging
+      - store_artifacts:
+          path: cypress/reports/integration/public/
+
+  test_production:
+    <<: *defaults
+
+    steps:
+      - checkout
+      - run:
+          name: install general dependencies
+          command: yarn install
+      - run:
+          name: Run cypress tests against the production environment
+          command: yarn cy:run-ci-production
+
+  test_reports_production:
+    <<: *defaults
+
+    steps:
+      - checkout
+      - run:
+          name: install general dependencies
+          command: yarn install
+      - run:
+          name: Run cypress tests
+          command: yarn test:create-reports-production
+      - store_artifacts:
+          path: cypress/reports/integration/public/
+
+  deploy_staging:
+    docker:
+      - image: circleci/node:12.16.3-browsers # replace with the image you need
+    steps:
+      - checkout
+      - run:
+          name: Log in to Heroku
+          command: bash ./login-heroku.sh
+      - run:
+          name: Install Heroku CLI
+          command: |
+            wget https://cli-assets.heroku.com/branches/stable/heroku-linux-amd64.tar.gz
+            sudo mkdir -p /usr/local/lib /usr/local/bin
+            sudo tar -xvzf heroku-linux-amd64.tar.gz -C /usr/local/lib
+            sudo ln -s /usr/local/lib/heroku/bin/heroku /usr/local/bin/heroku
+      - run:
+          name: Deploy heroku app
+          command: |
+            echo "Pushing branch ${CIRCLE_BRANCH} to app ${HEROKU_APP_STAGING}"
+            git remote add heroku https://git.heroku.com/${HEROKU_APP_STAGING}.git
+            git push heroku ${CIRCLE_BRANCH}:master
+      - run:
+          name: Set BUILD_NUM and COMPARE_URL on Heroku to CIRCLECI values
+          command: |
+            heroku config:set BUILD_NUM=${CIRCLE_BUILD_NUM} COMPARE_URL=${CIRCLE_COMPARE_URL} -a ${HEROKU_APP_STAGING}
+
+  deploy_production:
+    docker:
+      - image: circleci/node:12.16.3-browsers # replace with the image you need
+    steps:
+      - checkout
+      - run:
+          name: Log in to Heroku
+          command: bash ./login-heroku.sh
+      - run:
+          name: Install Heroku CLI
+          command: |
+            wget https://cli-assets.heroku.com/branches/stable/heroku-linux-amd64.tar.gz
+            sudo mkdir -p /usr/local/lib /usr/local/bin
+            sudo tar -xvzf heroku-linux-amd64.tar.gz -C /usr/local/lib
+            sudo ln -s /usr/local/lib/heroku/bin/heroku /usr/local/bin/heroku
+      - run:
+          name: Deploy heroku app
+          command: |
+            echo "Pushing branch ${CIRCLE_BRANCH} to app ${HEROKU_APP_PRODUCTION}"
+            git remote add heroku https://git.heroku.com/${HEROKU_APP_PRODUCTION}.git
+            git push heroku ${CIRCLE_BRANCH}:master
+      - run:
+          name: Set BUILD_NUM and COMPARE_URL on Heroku to CIRCLECI values
+          command: |
+            heroku config:set BUILD_NUM=${CIRCLE_BUILD_NUM} COMPARE_URL=${CIRCLE_COMPARE_URL} -a ${HEROKU_APP_PRODUCTION}
+
+workflows:
+  version: 2
+  build_test_deploy:
+    jobs:
+      - build
+      - cypress_tests:
+          requires:
+            - build
+      - test_reports_and_coverage:
+          requires:
+            - build
+      - deploy_staging:
+          requires:
+            - cypress_tests
+            - test_reports_and_coverage
+          filters:
+            branches:
+              only: development
+      - test_staging:
+          requires:
+            - deploy_staging
+          filters:
+            branches:
+              only: development
+      - test_reports_staging:
+          requires:
+            - deploy_staging
+          filters:
+            branches:
+              only: development
+      - hold: # <<< A job that will require manual approval in the CircleCI web application.
+          type: approval
+          requires:
+            - test_staging
+            - test_reports_staging
+      - deploy_production:
+          requires:
+            - hold
+          filters:
+            branches:
+              only: development
+      - test_production:
+          requires:
+            - deploy_production
+          filters:
+            branches:
+              only: development
+      - test_reports_production:
+          requires:
+            - deploy_production
+          filters:
+            branches:
+              only: development

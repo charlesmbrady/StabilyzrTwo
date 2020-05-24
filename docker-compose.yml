@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  ##########################
+  ### SETUP SERVER CONTAINER
+  ##########################
+  server:
+    # Tell docker what file to build the server from
+    environment:
+      - NODE_ENV=production
+      - PORT=8080
+
+    build: .
+
+    # The ports to expose
+    expose:
+      - 8080
+
+    # Port mapping
+    ports:
+      - 8080:8080
+
+    # Run command
+    command: node ./backend/server.js

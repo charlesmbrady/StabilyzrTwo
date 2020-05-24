@@ -1,0 +1,280 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 6,
+    "passes": 1,
+    "pending": 0,
+    "failures": 5,
+    "start": "2020-05-22T22:57:13.927Z",
+    "end": "2020-05-22T22:57:13.927Z",
+    "duration": 12766,
+    "testsRegistered": 6,
+    "passPercent": 16.666666666666668,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "118953bb-250c-428a-adc3-0aaa52bfea74",
+      "title": "",
+      "fullFile": "cypress/integration/test-spec.js",
+      "file": "cypress/integration/test-spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "aebbf2cc-9c24-4c98-bdc8-85def0fb2533",
+          "title": "home",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "can visit homepage",
+              "fullTitle": "home can visit homepage",
+              "timedOut": null,
+              "duration": 1276,
+              "state": "failed",
+              "speed": "slow",
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');",
+              "err": {
+                "message": "CypressError: `cy.request()` failed trying to load:\n\nhttp://localhost:8080/__coverage__\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:8080\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: http://localhost:8080/__coverage__\n\n-----------------------------------------------------------\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nThe stack trace for this error is:\n\nRequestError: Error: connect ECONNREFUSED 127.0.0.1:8080\n    at new RequestError (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/request-promise-core/lib/errors.js:14:15)\n    at Request.plumbing.callback (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/request-promise-core/lib/plumbing.js:87:29)\n    at Request.RP$callback [as _callback] (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/request-promise-core/lib/plumbing.js:46:31)\n    at self.callback (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/@cypress/request/request.js:185:22)\n    at Request.emit (events.js:210:5)\n    at Request.onRequestError (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/@cypress/request/request.js:877:8)\n    at ClientRequest.emit (events.js:215:7)\n    at Socket.socketErrorListener (_http_client.js:406:9)\n    at Socket.emit (events.js:210:5)\n    at emitErrorNT (internal/streams/destroy.js:92:8)\n    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)\n\n\nhttps://on.cypress.io/request\n\nBecause this error occurred during a `after all` hook we are skipping all of the remaining tests.",
+                "estack": "CypressError: `cy.request()` failed trying to load:\n\nhttp://localhost:8080/__coverage__\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:8080\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: http://localhost:8080/__coverage__\n\n-----------------------------------------------------------\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nThe stack trace for this error is:\n\nRequestError: Error: connect ECONNREFUSED 127.0.0.1:8080\n    at new RequestError (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/request-promise-core/lib/errors.js:14:15)\n    at Request.plumbing.callback (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/request-promise-core/lib/plumbing.js:87:29)\n    at Request.RP$callback [as _callback] (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/request-promise-core/lib/plumbing.js:46:31)\n    at self.callback (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/@cypress/request/request.js:185:22)\n    at Request.emit (events.js:210:5)\n    at Request.onRequestError (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/@cypress/request/request.js:877:8)\n    at ClientRequest.emit (events.js:215:7)\n    at Socket.socketErrorListener (_http_client.js:406:9)\n    at Socket.emit (events.js:210:5)\n    at emitErrorNT (internal/streams/destroy.js:92:8)\n    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)\n\n\nhttps://on.cypress.io/request\n\nBecause this error occurred during a `after all` hook we are skipping all of the remaining tests.\n",
+                "diff": null
+              },
+              "uuid": "7b9b836a-d959-49fc-ac7f-4b19d770afea",
+              "parentUUID": "aebbf2cc-9c24-4c98-bdc8-85def0fb2533",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "7b9b836a-d959-49fc-ac7f-4b19d770afea"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 1276,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "ca4eab6e-dcb7-4626-b247-0d88437fd440",
+          "title": "Users",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Can create user",
+              "fullTitle": "Users Can create user",
+              "timedOut": null,
+              "duration": 907,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('POST', \"\".concat(Cypress.config('apiUrl'), \"/auth/user\"), {\n  firstName: 'charles',\n  lastName: 'brady',\n  email: 'ranom',\n  password: 'myPassword1!'\n}).then(function (response) {\n  // response.body is automatically serialized into JSON\n  expect(response.body).to.have.property('firstName', 'charles'); // true\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed trying to load:\n\nhttp://localhost:8080/auth/user\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:8080\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: http://localhost:8080/auth/user\n\n-----------------------------------------------------------\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nThe stack trace for this error is:\n\nRequestError: Error: connect ECONNREFUSED 127.0.0.1:8080\n    at new RequestError (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/request-promise-core/lib/errors.js:14:15)\n    at Request.plumbing.callback (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/request-promise-core/lib/plumbing.js:87:29)\n    at Request.RP$callback [as _callback] (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/request-promise-core/lib/plumbing.js:46:31)\n    at self.callback (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/@cypress/request/request.js:185:22)\n    at Request.emit (events.js:210:5)\n    at Request.onRequestError (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/@cypress/request/request.js:877:8)\n    at ClientRequest.emit (events.js:215:7)\n    at Socket.socketErrorListener (_http_client.js:406:9)\n    at Socket.emit (events.js:210:5)\n    at emitErrorNT (internal/streams/destroy.js:92:8)\n    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)\n\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed trying to load:\n\nhttp://localhost:8080/auth/user\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:8080\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: http://localhost:8080/auth/user\n\n-----------------------------------------------------------\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nThe stack trace for this error is:\n\nRequestError: Error: connect ECONNREFUSED 127.0.0.1:8080\n    at new RequestError (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/request-promise-core/lib/errors.js:14:15)\n    at Request.plumbing.callback (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/request-promise-core/lib/plumbing.js:87:29)\n    at Request.RP$callback [as _callback] (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/request-promise-core/lib/plumbing.js:46:31)\n    at self.callback (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/@cypress/request/request.js:185:22)\n    at Request.emit (events.js:210:5)\n    at Request.onRequestError (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/@cypress/request/request.js:877:8)\n    at ClientRequest.emit (events.js:215:7)\n    at Socket.socketErrorListener (_http_client.js:406:9)\n    at Socket.emit (events.js:210:5)\n    at emitErrorNT (internal/streams/destroy.js:92:8)\n    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)\n\n\nhttps://on.cypress.io/request\n",
+                "diff": null
+              },
+              "uuid": "d7f14833-82e1-4b90-a80d-16ff02ec76de",
+              "parentUUID": "ca4eab6e-dcb7-4626-b247-0d88437fd440",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Can authenticate user",
+              "fullTitle": "Users Can authenticate user",
+              "timedOut": null,
+              "duration": 924,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('POST', \"\".concat(Cypress.config('apiUrl'), \"/auth/authenticate\"), {\n  email: 'ranom',\n  password: 'myPassword1!'\n}).then(function (response) {\n  expect(response.body).to.equal('OK');\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed trying to load:\n\nhttp://localhost:8080/auth/authenticate\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:8080\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: http://localhost:8080/auth/authenticate\n\n-----------------------------------------------------------\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nThe stack trace for this error is:\n\nRequestError: Error: connect ECONNREFUSED 127.0.0.1:8080\n    at new RequestError (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/request-promise-core/lib/errors.js:14:15)\n    at Request.plumbing.callback (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/request-promise-core/lib/plumbing.js:87:29)\n    at Request.RP$callback [as _callback] (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/request-promise-core/lib/plumbing.js:46:31)\n    at self.callback (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/@cypress/request/request.js:185:22)\n    at Request.emit (events.js:210:5)\n    at Request.onRequestError (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/@cypress/request/request.js:877:8)\n    at ClientRequest.emit (events.js:215:7)\n    at Socket.socketErrorListener (_http_client.js:406:9)\n    at Socket.emit (events.js:210:5)\n    at emitErrorNT (internal/streams/destroy.js:92:8)\n    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)\n\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed trying to load:\n\nhttp://localhost:8080/auth/authenticate\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:8080\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: http://localhost:8080/auth/authenticate\n\n-----------------------------------------------------------\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nThe stack trace for this error is:\n\nRequestError: Error: connect ECONNREFUSED 127.0.0.1:8080\n    at new RequestError (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/request-promise-core/lib/errors.js:14:15)\n    at Request.plumbing.callback (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/request-promise-core/lib/plumbing.js:87:29)\n    at Request.RP$callback [as _callback] (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/request-promise-core/lib/plumbing.js:46:31)\n    at self.callback (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/@cypress/request/request.js:185:22)\n    at Request.emit (events.js:210:5)\n    at Request.onRequestError (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/@cypress/request/request.js:877:8)\n    at ClientRequest.emit (events.js:215:7)\n    at Socket.socketErrorListener (_http_client.js:406:9)\n    at Socket.emit (events.js:210:5)\n    at emitErrorNT (internal/streams/destroy.js:92:8)\n    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)\n\n\nhttps://on.cypress.io/request\n",
+                "diff": null
+              },
+              "uuid": "52fcfae9-84e3-46f8-bc6d-c4d03430eb90",
+              "parentUUID": "ca4eab6e-dcb7-4626-b247-0d88437fd440",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "d7f14833-82e1-4b90-a80d-16ff02ec76de",
+            "52fcfae9-84e3-46f8-bc6d-c4d03430eb90"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 1831,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "e67a515c-66af-471d-893e-0554ccc56f74",
+      "title": "",
+      "fullFile": "cypress/integration/test.js",
+      "file": "cypress/integration/test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f0bf0127-bbae-43fe-adaf-fa4c9a30c712",
+          "title": "Users",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Can create user",
+              "fullTitle": "Users Can create user",
+              "timedOut": null,
+              "duration": 2757,
+              "state": "failed",
+              "speed": "slow",
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get('[data-test=\"register-navlink\"]').click();\ncy.get('[data-test=\"firstName-input\"]').type('Charles');\ncy.get('[data-test=\"lastName-input\"]').type('Charles');\ncy.get('[data-test=\"email-input\"]').type('charlesmbrady@gmail.com');\ncy.get('[data-test=\"password-input\"]').type('Password1!');\ncy.get('[data-test=\"passwordConfirmation-input\"]').type('Password1!');\ncy.get('[data-test=\"submit-button\"]').click();",
+              "err": {
+                "message": "CypressError: `cy.request()` failed trying to load:\n\nhttp://localhost:8080/__coverage__\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:8080\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: http://localhost:8080/__coverage__\n\n-----------------------------------------------------------\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nThe stack trace for this error is:\n\nRequestError: Error: connect ECONNREFUSED 127.0.0.1:8080\n    at new RequestError (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/request-promise-core/lib/errors.js:14:15)\n    at Request.plumbing.callback (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/request-promise-core/lib/plumbing.js:87:29)\n    at Request.RP$callback [as _callback] (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/request-promise-core/lib/plumbing.js:46:31)\n    at self.callback (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/@cypress/request/request.js:185:22)\n    at Request.emit (events.js:210:5)\n    at Request.onRequestError (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/@cypress/request/request.js:877:8)\n    at ClientRequest.emit (events.js:215:7)\n    at Socket.socketErrorListener (_http_client.js:406:9)\n    at Socket.emit (events.js:210:5)\n    at emitErrorNT (internal/streams/destroy.js:92:8)\n    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)\n\n\nhttps://on.cypress.io/request\n\nBecause this error occurred during a `after all` hook we are skipping all of the remaining tests.",
+                "estack": "CypressError: `cy.request()` failed trying to load:\n\nhttp://localhost:8080/__coverage__\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:8080\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: http://localhost:8080/__coverage__\n\n-----------------------------------------------------------\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nThe stack trace for this error is:\n\nRequestError: Error: connect ECONNREFUSED 127.0.0.1:8080\n    at new RequestError (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/request-promise-core/lib/errors.js:14:15)\n    at Request.plumbing.callback (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/request-promise-core/lib/plumbing.js:87:29)\n    at Request.RP$callback [as _callback] (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/request-promise-core/lib/plumbing.js:46:31)\n    at self.callback (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/@cypress/request/request.js:185:22)\n    at Request.emit (events.js:210:5)\n    at Request.onRequestError (/Users/charlesbrady/Library/Caches/Cypress/4.5.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/@cypress/request/request.js:877:8)\n    at ClientRequest.emit (events.js:215:7)\n    at Socket.socketErrorListener (_http_client.js:406:9)\n    at Socket.emit (events.js:210:5)\n    at emitErrorNT (internal/streams/destroy.js:92:8)\n    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)\n\n\nhttps://on.cypress.io/request\n\nBecause this error occurred during a `after all` hook we are skipping all of the remaining tests.\n",
+                "diff": null
+              },
+              "uuid": "45095d51-0be8-40bc-afdc-91820eac2d43",
+              "parentUUID": "f0bf0127-bbae-43fe-adaf-fa4c9a30c712",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Can login with existing user",
+              "fullTitle": "Users Can login with existing user",
+              "timedOut": null,
+              "duration": 1318,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get('[data-test=\"login-navlink\"]').click();\ncy.get('[data-test=\"email-input\"]').type('charlesmbrady@gmail.com');\ncy.get('[data-test=\"password-input\"]').type('Password1!');\ncy.get('[data-test=\"submit-button\"]').click();\ncy.visit('/dashboard');",
+              "err": {},
+              "uuid": "59ea8c1c-2bbe-49d7-8e43-b8e336791368",
+              "parentUUID": "f0bf0127-bbae-43fe-adaf-fa4c9a30c712",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Can logout",
+              "fullTitle": "Users Can logout",
+              "timedOut": null,
+              "duration": 5584,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get('[data-test=\"login-navlink\"]').click();\ncy.get('[data-test=\"email-input\"]').type('charlesmbrady@gmail.com');\ncy.get('[data-test=\"password-input\"]').type('Password1!');\ncy.get('[data-test=\"submit-button\"]').click();\ncy.visit('/dashboard');\ncy.get('[data-test=\"logout-button\"]').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying: Expected to find element: `[data-test=\"logout-button\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying: Expected to find element: `[data-test=\"logout-button\"]`, but never found it.\n    at ensureExistence (http://localhost:8081/__cypress/runner/cypress_runner.js:137673:32)\n    at Object.ensureElExistence (http://localhost:8081/__cypress/runner/cypress_runner.js:137691:12)\n    at ensureExistence (http://localhost:8081/__cypress/runner/cypress_runner.js:127867:23)\n    at onFailFn (http://localhost:8081/__cypress/runner/cypress_runner.js:127905:9)\n    at tryCatcher (http://localhost:8081/__cypress/runner/cypress_runner.js:9065:23)\n    at Promise._settlePromiseFromHandler (http://localhost:8081/__cypress/runner/cypress_runner.js:7000:31)\n    at Promise._settlePromise (http://localhost:8081/__cypress/runner/cypress_runner.js:7057:18)\n    at Promise._settlePromise0 (http://localhost:8081/__cypress/runner/cypress_runner.js:7102:10)\n    at Promise._settlePromises (http://localhost:8081/__cypress/runner/cypress_runner.js:7178:18)\n    at _drainQueueStep (http://localhost:8081/__cypress/runner/cypress_runner.js:3772:12)\n    at _drainQueue (http://localhost:8081/__cypress/runner/cypress_runner.js:3765:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:8081/__cypress/runner/cypress_runner.js:3781:5)\n    at Async.drainQueues (http://localhost:8081/__cypress/runner/cypress_runner.js:3651:14)",
+                "diff": null
+              },
+              "uuid": "e0bdd07e-8731-46da-90bd-ecb8fff254b6",
+              "parentUUID": "f0bf0127-bbae-43fe-adaf-fa4c9a30c712",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "59ea8c1c-2bbe-49d7-8e43-b8e336791368"
+          ],
+          "failures": [
+            "45095d51-0be8-40bc-afdc-91820eac2d43",
+            "e0bdd07e-8731-46da-90bd-ecb8fff254b6"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 9659,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/integration/reports/mocha",
+        "quiet": true,
+        "html": false,
+        "overwrite": false,
+        "json": true
+      },
+      "version": "4.1.0"
+    }
+  }
+}

@@ -7,7 +7,7 @@ defaults: &defaults
         TEST_DATABASE_URL: mysql://root@localhost/circle_test
     - image: cypress/base:8
 
-  working_directory: ~/MERNolithic_sql
+  working_directory: ~/Stabilyzr
 
 version: 2
 jobs:

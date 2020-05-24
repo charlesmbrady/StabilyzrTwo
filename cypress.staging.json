@@ -1,7 +1,7 @@
 {
-  "baseUrl": "https://mernolithic-staging.herokuapp.com",
+  "baseUrl": "https://stabilyzr-staging.herokuapp.com",
   "reporter": "./node_modules/mochawesome/src/mochawesome.js",
-  "apiUrl": "https://mernolithic-staging.herokuapp.com",
+  "apiUrl": "https://stabilyzr-staging.herokuapp.com",
   "env": {
     "user_firstName": "Charles",
     "user_lastName": "Brady",

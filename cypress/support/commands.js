@@ -12,6 +12,8 @@ import Nav from '../elements/nav';
 import Login from '../elements/login';
 import Register from '../elements/register';
 import Home from '../elements/home';
+import Toolbar from '../elements/toolbar';
+import NewProject from '../elements/newProject';
 //
 // -- This is a parent command --
 // Cypress.Commands.add("login", (email, password) => { ... })
@@ -39,6 +41,15 @@ Cypress.Commands.add('login', (user) => {
 Cypress.Commands.add('logout', () => {
   cy.get(Nav.LOGOUT).click();
 });
+
+Cypress.Commands.add('createProject', (project) => {
+  cy.url().should('contain', '/dashboard');
+  cy.get(Toolbar.CREATE_PROJECT_BUTTON).click();
+  // cy.url().should('contain', 'projects/new');
+  cy.get(NewProject.NAME).type(project.name);
+  cy.get(NewProject.SUBMIT).click();
+});
+
 //
 // -- This is a parent command --
 // Cypress.Commands.add("login", (email, password) => { ... })

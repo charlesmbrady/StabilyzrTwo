@@ -9,7 +9,7 @@ export default function Toolbar() {
       <h1>Projects</h1>
       <Link
         className='toolbarLink'
-        data-test='createProject-button'
+        data-test='create-project-button'
         to='/projects/new'
       >
         New Project

@@ -1,8 +1,8 @@
 const bcrypt = require('bcrypt');
 
 module.exports = (sequelize, DataTypes) => {
-  const Primary = sequelize.define(
-    'Primary',
+  const Project = sequelize.define(
+    'Project',
     {
       id: {
         type: DataTypes.INTEGER,
@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         unique: {
           args: true,
-          msg: 'Primary already exists',
+          msg: 'Project already exists',
         },
       },
     },
@@ -23,15 +23,15 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
 
-  // Primary.belongsTo(User);
-  Primary.associate = (models) => {
-    // Primary.hasMany(models.Secondary, {});
-    Primary.belongsTo(models.User, {
+  // Project.belongsTo(User);
+  Project.associate = (models) => {
+    Project.hasMany(models.Test, {});
+    Project.belongsTo(models.User, {
       foreignKey: {
         allowNull: false,
       },
     });
   };
 
-  return Primary;
+  return Project;
 };

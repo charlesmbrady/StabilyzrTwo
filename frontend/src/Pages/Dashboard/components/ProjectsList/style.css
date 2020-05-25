@@ -1,0 +1,12 @@
+.projectsList {
+  width: 98%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  justify-items: center;
+  grid-auto-flow: row;
+  grid-gap: 2rem;
+  /* height: 100vh; */
+  border: none;
+  border-radius: 10px;
+}

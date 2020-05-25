@@ -17,6 +17,9 @@ import Dashboard from './Pages/Dashboard';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import Home from './Pages/Home';
+import NewProject from './Pages/NewProject';
+import Project from './Pages/Project';
+import NewTest from './Pages/NewTest';
 
 export default function App() {
   const [isLoading, data, error] = useApi(API.checkToken);
@@ -34,9 +37,7 @@ export default function App() {
   // Set GlobalContext provider values
   const [global, setGlobal] = useState({
     isSubmitting: false,
-    isLoading: false,
-    leftDrawerOpen: false,
-    rightDrawerOpen: false,
+    currentProject: null,
   });
   const globalValue = useMemo(() => ({ global, setGlobal }), [
     global,
@@ -52,6 +53,7 @@ export default function App() {
     password: null,
     passwordConfirmation: null,
     agreement: null,
+    testSubject: null,
   });
   const formValuesValue = useMemo(() => ({ formValues, setFormValues }), [
     formValues,
@@ -75,11 +77,28 @@ export default function App() {
                 {isLoading && <Mask />}
                 <Header />
                 <Switch>
+                  <Route exact path='/' component={Home} />
                   <Route exact path='/login' component={Login} />
                   <Route exact path='/register' component={Register} />
                   <PrivateRoute exact path='/dashboard' component={Dashboard} />
-
-                  <Route path='/' component={Home} />
+                  <PrivateRoute exact path='/projects/new'>
+                    <NewProject />
+                  </PrivateRoute>
+                  <PrivateRoute
+                    exact
+                    path='/projects/:project/tests/new'
+                    component={NewTest}
+                  />
+                  {/* <PrivateRoute exact path='/projects'>
+                    <Projects />
+                  </PrivateRoute> */}
+                  <Route exact path='/projects/:project' component={Project} />
+                  {/* <PrivateRoute exact path='/projects/:project/tests'>
+                    <Tests />
+                  </PrivateRoute> */}
+                  {/* <PrivateRoute exact path='/projects/:project/tests/:id'>
+                    <Test />
+                  </PrivateRoute>{' '} */}
                 </Switch>
               </div>
             </Router>

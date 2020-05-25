@@ -1,9 +1,12 @@
 import React from 'react';
+import Toolbar from './components/Toolbar';
+import ProjectsList from './components/ProjectsList';
 
 export default function Dashboard() {
   return (
-    <div>
-      <h1>Dashboard stuff</h1>
+    <div className='dashboardContainer'>
+      <Toolbar />
+      <ProjectsList />
     </div>
   );
 }

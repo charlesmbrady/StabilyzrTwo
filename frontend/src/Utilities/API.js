@@ -21,4 +21,24 @@ export default {
       throw err;
     });
   },
+  createProject: function (project) {
+    return axios.post('/api/projects', project).catch((err) => {
+      throw err;
+    });
+  },
+  createTest: function (test) {
+    return axios.post('/api/tests', test).catch((err) => {
+      throw err;
+    });
+  },
+  getAllProjects: function () {
+    return axios.get('/api/projects').catch((err) => {
+      throw err;
+    });
+  },
+  getProjectById: function (id) {
+    return axios.get(`/api/projects/${id}`).catch((err) => {
+      throw err;
+    });
+  },
 };

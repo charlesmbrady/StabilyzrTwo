@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { FormValuesContext } from '../Contexts/FormValuesContext';
 import { UserContext } from '../Contexts/UserContext';
 import { FormErrorsContext } from '../Contexts/FormErrorsContext';
@@ -11,11 +11,13 @@ const useForm = (callback) => {
   const { formErrors, setFormErrors } = useContext(FormErrorsContext);
   const { user, setUser } = useContext(UserContext);
   const { global, setGlobal } = useContext(GlobalContext);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [data, setData] = useState();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
-    setGlobal({ ...global, isSubmitting: true });
+    setIsSubmitting(true);
   };
 
   const handleChange = (e) => {
@@ -44,7 +46,7 @@ const useForm = (callback) => {
   };
 
   const clearForm = () => {
-    setGlobal({ ...global, isSubmitting: false });
+    setIsSubmitting(false);
     let tempValues = { ...formValues };
     // let tempErrors = { ...formErrors };
 
@@ -69,7 +71,35 @@ const useForm = (callback) => {
       case 'registerUser':
         registerUser();
         break;
+      case 'createProject':
+        createProject();
+        break;
+      case 'createTest':
+        createTest();
+        break;
     }
+  };
+
+  const createProject = () => {
+    API.createProject({
+      name: formValues.projectName,
+    }).then((res) => {
+      if (res.status === 200) {
+        clearForm();
+        setData(res.data);
+      }
+    });
+  };
+  const createTest = () => {
+    API.createTest({
+      subject: formValues.testSubject,
+      ProjectId: parseInt(global.currentProject),
+    }).then((res) => {
+      if (res.status === 200) {
+        clearForm();
+        setData(res.data);
+      }
+    });
   };
   const authenticateUser = () => {
     if (formErrors.email || formErrors.password) {
@@ -115,13 +145,14 @@ const useForm = (callback) => {
   useEffect(() => {
     // check to see if there are errors
     // if not, call our callback
-    if (global.isSubmitting) {
+    if (isSubmitting) {
       executeCallback(callback);
     }
   }, [formErrors]);
 
   return {
     handleChange,
+    isSubmitting,
     handleSubmit,
     handleCheckbox,
     clearForm,
@@ -129,6 +160,7 @@ const useForm = (callback) => {
     formErrors,
     authenticateUser,
     registerUser,
+    data,
   };
 };
 

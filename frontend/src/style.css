@@ -21,6 +21,10 @@ html,
   font-family: 'Hind', sans-serif;
 }
 
+.main-container {
+  margin-top: 77px;
+}
+
 body {
   background-image: url(Images/logo.svg);
   background-position: center;

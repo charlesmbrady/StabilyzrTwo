@@ -2,12 +2,12 @@ const db = require('../models');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
-// Defining methods for the primary items controller
+// Defining methods for the projects controller
 module.exports = {
   create: function (req, res) {
-    const primary = req.body;
+    const project = req.body;
 
-    db.Primary.create(primary)
+    db.Project.create(project)
       .then((result) => {
         res.json(result);
       })
@@ -17,49 +17,49 @@ module.exports = {
       });
   },
   getById: function (req, res) {
-    db.Primary.findAll({
+    db.Project.findAll({
       where: {
         UserId: req.body.UserId,
       },
-    }).then((dbPrimaries, err) => {
+    }).then((dbProjects, err) => {
       if (err) {
         res.status(500).send(err);
       }
-      dbPrimaries.filter((primary) => primary.id == req.params.id);
-      res.json(dbPrimaries[0]);
+      dbProjects.filter((project) => project.id == req.params.id);
+      res.json(dbProjects[0]);
     });
   },
   getAllByUserId: function (req, res) {
-    db.Primary.findAll({
+    db.Project.findAll({
       where: {
         UserId: req.body.UserId,
       },
-    }).then((dbPrimaries, err) => {
+    }).then((dbProjects, err) => {
       if (err) {
         res.status(500).send(err);
       }
-      res.json(dbPrimaries);
+      res.json(dbProjects);
     });
   },
   updateById: function (req, res) {
-    db.Primary.findAll({
+    db.Project.findAll({
       where: {
         UserId: req.body.UserId,
       },
-    }).then((dbPrimaries, err) => {
+    }).then((dbProjects, err) => {
       if (err) {
         res.status(500).send(err);
       }
-      dbPrimaries.filter((primary) => primary.id == req.params.id);
-      if (dbPrimaries[0]) {
-        db.Primary.update(req.body, {
+      dbProjects.filter((project) => project.id == req.params.id);
+      if (dbProjects[0]) {
+        db.Project.update(req.body, {
           where: {
             id: req.params.id,
           },
         })
-          .then((newDbPrimary) => {
-            if (newDbPrimary) {
-              res.json(newDbPrimary);
+          .then((newDbProject) => {
+            if (newDbProject) {
+              res.json(newDbProject);
             }
           })
           .catch((err) => res.json(err));

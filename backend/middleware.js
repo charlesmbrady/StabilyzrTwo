@@ -13,7 +13,7 @@ const withAuth = function (req, res, next) {
       if (err) {
         res.status(401).send('Unauthorized: Invalid token... ' + err);
       } else {
-        req.body.UserId = decoded.username;
+        req.body.UserId = decoded.id;
         next();
       }
     });

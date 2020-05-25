@@ -75,9 +75,5 @@ module.exports = (sequelize, DataTypes) => {
     User.hasMany(models.Project, {});
   };
 
-  User.associate = (models) => {
-    User.hasMany(models.Test, {});
-  };
-
   return User;
 };

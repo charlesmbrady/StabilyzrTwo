@@ -45,11 +45,6 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   Test.associate = (models) => {
-    Test.belongsTo(models.User, {
-      foreignKey: {
-        allowNull: false,
-      },
-    });
     Test.belongsTo(models.Project, {
       foreignKey: {
         allowNull: false,

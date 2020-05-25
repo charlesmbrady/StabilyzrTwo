@@ -4,7 +4,7 @@ import API from '../../Utilities/API';
 import useApi from '../../Hooks/useApi';
 import Mask from '../../GenericComponents/Mask';
 
-import Toolbar from './Components/Toolbar';
+import Toolbar from './components/Toolbar';
 
 export default function Project({ match }) {
   const [isLoading, data, error] = useApi(

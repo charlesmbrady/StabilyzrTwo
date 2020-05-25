@@ -46,6 +46,7 @@ app.use(function (err, req, res, next) {
 
 const syncOptions = {
   force: true,
+  FOREIGN_KEY_CHECKS: 0,
 };
 
 // if (app.get('env') === 'test') {

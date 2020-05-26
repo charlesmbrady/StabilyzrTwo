@@ -16,10 +16,9 @@ export default function Project({ match }) {
     <div className='project'>
       {isLoading && <Mask />}
       {data && <Toolbar name={data.name} projectId={match.params.project} />}
-
-      {/* {data && (
+      {data && (
         <div className='projectDetails'>Project sDetails:{data.name}</div>
-      )} */}
+      )}
     </div>
   );
 }

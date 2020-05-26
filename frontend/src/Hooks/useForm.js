@@ -77,6 +77,9 @@ const useForm = (callback) => {
       case 'createTest':
         createTest();
         break;
+      case 'deleteProject':
+        deleteProject();
+        break;
     }
   };
 

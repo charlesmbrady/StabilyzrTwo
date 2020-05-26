@@ -90,6 +90,14 @@ const useForm = (callback) => {
       }
     });
   };
+  const deleteProject = () => {
+    API.deleteProject(global.currentProject).then((res) => {
+      if (res.status === 200) {
+        clearForm();
+        setData(res.data);
+      }
+    });
+  };
   const createTest = () => {
     API.createTest({
       subject: formValues.testSubject,

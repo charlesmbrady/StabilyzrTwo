@@ -41,4 +41,9 @@ export default {
       throw err;
     });
   },
+  deleteProjectById: function (id) {
+    return axios.delete(`/api/projects/${id}`).catch((err) => {
+      throw err;
+    });
+  },
 };

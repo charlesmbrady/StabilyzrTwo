@@ -17,7 +17,7 @@ export default function ProjectsList() {
           <div>
             <Link
               to={`/projects/${project.id}`}
-              data-test={`project-card-${project.id}`}
+              data-test={`project-card-${project.name}`}
             >
               <ProjectCard data={project} key={i} />
             </Link>

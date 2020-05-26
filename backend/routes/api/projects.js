@@ -8,7 +8,7 @@ const withAuth = require('../../middleware.js');
 router.post('/projects', withAuth, projectsController.create);
 router.get('/projects/:id', withAuth, projectsController.getById);
 router.put('/projects/:id', withAuth, projectsController.updateById);
-// router.delete('/projects/:id', withAuth, projectsController.deleteById);
+router.delete('/projects/:id', withAuth, projectsController.deleteById);
 
 router.get('/projects', withAuth, projectsController.getAllByUserId);
 

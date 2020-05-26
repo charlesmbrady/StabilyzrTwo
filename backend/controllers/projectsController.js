@@ -66,4 +66,15 @@ module.exports = {
       }
     });
   },
+  deleteById: (req, res) => {
+    db.Project.destroy({
+      where: { id: req.params.id },
+    })
+      .then(() => {
+        res.json(true);
+      })
+      .catch(() => {
+        res.json(false);
+      });
+  },
 };

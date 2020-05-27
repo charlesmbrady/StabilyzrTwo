@@ -10,6 +10,6 @@ router.get('/tests/:id', withAuth, testsController.getById);
 router.put('/tests/:id', withAuth, testsController.updateById);
 // router.delete('/tests/:id', withAuth, testsController.deleteById);
 
-router.get('/tests', withAuth, testsController.getAllByUserId);
+router.get('/projects/:id/tests', withAuth, testsController.getAllByProjectId);
 
 module.exports = router;

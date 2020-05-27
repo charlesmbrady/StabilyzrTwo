@@ -18,6 +18,9 @@ export default function Form({
   if (submitFunction == 'createTest' && data) {
     return <Redirect to={`/projects/${currentProject}`} />;
   }
+  if (submitFunction == 'deleteProject' && data) {
+    return <Redirect to={`/dashboard`} />;
+  }
 
   return (
     <div>

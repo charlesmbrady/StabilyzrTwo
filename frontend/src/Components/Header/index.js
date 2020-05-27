@@ -45,7 +45,7 @@ export default function Header({ className }) {
     <div className={`${className} header`}>
       <UnevenHTrack className='header-track'>
         <Link className='home-link' to='/'>
-          <h2 className='logo'>MERNolithic</h2>
+          <h2 className='logo'>Stabilyzr</h2>
         </Link>
         {!user.isAuthenticated && (
           <Link

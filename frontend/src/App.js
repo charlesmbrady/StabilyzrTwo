@@ -17,9 +17,11 @@ import Dashboard from './Pages/Dashboard';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import Home from './Pages/Home';
+import Confirm from './Pages/Confirm';
 import NewProject from './Pages/NewProject';
 import Project from './Pages/Project';
 import NewTest from './Pages/NewTest';
+import Tests from './Pages/Tests';
 
 export default function App() {
   const [isLoading, data, error] = useApi(API.checkToken);
@@ -77,7 +79,7 @@ export default function App() {
                 {isLoading && <Mask />}
                 <Header />
                 <Switch>
-                  <Route exact path='/' component={Home} />
+                  <Route exact path='/' component={Login} />
                   <Route exact path='/login' component={Login} />
                   <Route exact path='/register' component={Register} />
                   <PrivateRoute exact path='/dashboard' component={Dashboard} />
@@ -93,9 +95,16 @@ export default function App() {
                     <Projects />
                   </PrivateRoute> */}
                   <Route exact path='/projects/:project' component={Project} />
-                  {/* <PrivateRoute exact path='/projects/:project/tests'>
-                    <Tests />
-                  </PrivateRoute> */}
+                  <Route
+                    exact
+                    path='/projects/:project/confirm'
+                    component={Confirm}
+                  />
+                  <Route
+                    exact
+                    path='/projects/:project/tests'
+                    component={Tests}
+                  />
                   {/* <PrivateRoute exact path='/projects/:project/tests/:id'>
                     <Test />
                   </PrivateRoute>{' '} */}

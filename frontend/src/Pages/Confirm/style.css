@@ -9,5 +9,7 @@
 }
 
 .newProject {
-  background: var(--main-color);
+  /* display: grid; */
+  /* height: 100vh; */
+  /* overflow: scroll; */
 }

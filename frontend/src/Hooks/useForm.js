@@ -77,6 +77,9 @@ const useForm = (callback) => {
       case 'createTest':
         createTest();
         break;
+      case 'deleteProject':
+        deleteProject();
+        break;
     }
   };
 
@@ -84,6 +87,14 @@ const useForm = (callback) => {
     API.createProject({
       name: formValues.projectName,
     }).then((res) => {
+      if (res.status === 200) {
+        clearForm();
+        setData(res.data);
+      }
+    });
+  };
+  const deleteProject = () => {
+    API.deleteProject(global.currentProject).then((res) => {
       if (res.status === 200) {
         clearForm();
         setData(res.data);

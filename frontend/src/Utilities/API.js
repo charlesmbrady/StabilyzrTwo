@@ -41,8 +41,13 @@ export default {
       throw err;
     });
   },
-  deleteProjectById: function (id) {
+  deleteProject: function (id) {
     return axios.delete(`/api/projects/${id}`).catch((err) => {
+      throw err;
+    });
+  },
+  getAllTests: function (id) {
+    return axios.get(`/api/projects/${id}/tests`).catch((err) => {
       throw err;
     });
   },

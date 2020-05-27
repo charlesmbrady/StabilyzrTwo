@@ -19,16 +19,17 @@ html,
   margin: 0 auto;
   box-sizing: border-box;
   font-family: 'Hind', sans-serif;
+  background-color: var(--main-color);
 }
 
 .main-container {
   margin-top: 77px;
 }
 
-body {
+/* body {
   background-image: url(Images/logo.svg);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-}
+  background-attachment: fixed; */
+/* } */

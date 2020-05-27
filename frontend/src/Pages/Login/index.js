@@ -2,6 +2,8 @@ import './style.css';
 import React, { useContext } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { UserContext } from '../../Contexts/UserContext';
+import useApi from '../../Hooks/useApi';
+import API from '../../Utilities/API';
 
 //Form Components
 import Form from '../../GenericComponents/Form';
@@ -9,7 +11,12 @@ import SubmitButton from '../../GenericComponents/SubmitButton';
 import FieldGroup from '../../GenericComponents/FieldGroup';
 
 export default function Login() {
-  const { user } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
+  const [isLoading, data, error] = useApi(API.checkToken);
+  if (data) {
+    setUser({ ...user, isAuthenticated: true });
+    return <Redirect to='/dashboard' />;
+  }
 
   if (user.isAuthenticated) {
     return <Redirect to='/dashboard' />;

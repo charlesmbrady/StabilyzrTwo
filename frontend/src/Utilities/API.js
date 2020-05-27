@@ -46,4 +46,9 @@ export default {
       throw err;
     });
   },
+  getAllTests: function (id) {
+    return axios.get(`/api/projects/${id}/tests`).catch((err) => {
+      throw err;
+    });
+  },
 };

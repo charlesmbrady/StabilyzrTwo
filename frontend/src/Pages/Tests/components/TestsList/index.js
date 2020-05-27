@@ -6,11 +6,14 @@ import ProjectCard from './ProjectCard';
 import API from '../../../../Utilities/API';
 import Mask from '../../../../GenericComponents/Mask';
 
-export default function ProjectsList() {
-  const [isLoading, data, error] = useApi(API.getAllProjects);
+export default function TestsList({ match }) {
+  const [isLoading, data, error] = useApi(
+    API.getAllTests,
+    match.params.project
+  );
 
   return (
-    <div className='projectsList'>
+    <div className='testsList'>
       {isLoading && <Mask />}
       {data &&
         data.map((project, i) => (

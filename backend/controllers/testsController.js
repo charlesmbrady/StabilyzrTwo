@@ -29,10 +29,10 @@ module.exports = {
       res.json(dbTests[0]);
     });
   },
-  getAllByUserId: function (req, res) {
+  getAllByProjectId: function (req, res) {
     db.Test.findAll({
       where: {
-        UserId: req.body.UserId,
+        ProjectId: req.params.id,
       },
     }).then((dbTests, err) => {
       if (err) {

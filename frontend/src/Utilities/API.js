@@ -41,6 +41,11 @@ export default {
       throw err;
     });
   },
+  updateProject: function (project) {
+    return axios.put(`/api/projects/${project.id}`, project).catch((err) => {
+      throw err;
+    });
+  },
   deleteProject: function (id) {
     return axios.delete(`/api/projects/${id}`).catch((err) => {
       throw err;

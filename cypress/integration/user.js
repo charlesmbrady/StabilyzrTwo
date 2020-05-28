@@ -18,7 +18,6 @@ describe('User Authentication', function () {
     cy.get(Register.PASSWORD_CONFIRMATION).type(userOne.passwordConfirmation);
     cy.get(Register.AGREEMENT).check();
     cy.get(Register.SUBMIT).click();
-    // cy.url().should('include', '/login');
   });
 
   it('User can login', () => {
@@ -30,7 +29,7 @@ describe('User Authentication', function () {
     cy.get(Login.EMAIL).type(userOne.email);
     cy.get(Login.PASSWORD).type(userOne.password);
     cy.get(Login.SUBMIT).click();
-    // cy.url().should('include', '/dashboard');
+    cy.logout();
   });
 
   it('Can logout', () => {
@@ -40,11 +39,6 @@ describe('User Authentication', function () {
     cy.login(userOne);
     cy.get(Nav.LOGOUT).click();
   });
-
-  // it('Non-authenticated user will be redirect to login from protected route', () => {
-  //   cy.visit('/dashboard');
-  //   cy.url().should('contain', '/login');
-  // });
 });
 
 describe('API - Authentication', () => {
@@ -52,11 +46,10 @@ describe('API - Authentication', () => {
   it('Can create user', function () {
     cy.request('POST', `${Cypress.config('apiUrl')}/auth/user`, userThree).then(
       (response) => {
-        // response.body is automatically serialized into JSON
         expect(response.body).to.have.property(
           'firstName',
           userThree.firstName
-        ); // true
+        );
       }
     );
   });

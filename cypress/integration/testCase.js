@@ -41,7 +41,7 @@ describe('Tests', () => {
     cy.get(Nav.LOGOUT).click();
   });
 
-  it.only('User can create multiple tests for project', () => {
+  it('User can create multiple tests for project', () => {
     const user = new User();
     const project = new Project();
     const test = new Test();
@@ -67,5 +67,26 @@ describe('Tests', () => {
     cy.url().should('contain', '/tests');
 
     cy.get(Nav.LOGOUT).click();
+  });
+
+  it.only('User can view a test cases details', () => {
+    const user = new User();
+    const project = new Project();
+    const test = new Test();
+
+    cy.visit('/');
+    cy.registerNewUser(user);
+    cy.login(user);
+    cy.createProject(project);
+    cy.wait(500);
+    cy.get('[data-test="project-card"]').click({ force: true });
+    cy.wait(500);
+    cy.createTest(test);
+    cy.wait(500);
+    cy.get(ProjectPage.VIEW_TESTS_BUTTON).click();
+    cy.get('[data-test="test-subject"]').should('have.length', 1);
+    cy.get('[data-test="test-list-entry"]').click({ force: true });
+    cy.wait(500);
+    cy.url().should('contain', '/tests/');
   });
 });

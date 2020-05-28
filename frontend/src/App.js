@@ -41,6 +41,7 @@ export default function App() {
   const [global, setGlobal] = useState({
     isSubmitting: false,
     currentProject: null,
+    currentTest: null,
   });
   const globalValue = useMemo(() => ({ global, setGlobal }), [
     global,
@@ -99,6 +100,11 @@ export default function App() {
                   <Route
                     exact
                     path='/projects/:project/confirm'
+                    component={Confirm}
+                  />
+                  <Route
+                    exact
+                    path='/projects/:project/tests/:test/confirm'
                     component={Confirm}
                   />
                   <Route

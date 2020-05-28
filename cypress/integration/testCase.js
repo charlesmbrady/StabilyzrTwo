@@ -11,6 +11,7 @@ import NewTest from '../elements/newTest';
 import ProjectPage from '../elements/project';
 import Confirm from '../elements/confirm';
 import Toolbar from '../elements/toolbar';
+import TestPage from '../elements/test';
 
 describe('Tests', () => {
   it('User can create test for project', () => {
@@ -69,7 +70,7 @@ describe('Tests', () => {
     cy.get(Nav.LOGOUT).click();
   });
 
-  it.only('User can view a test cases details', () => {
+  it('User can view a test cases details', () => {
     const user = new User();
     const project = new Project();
     const test = new Test();
@@ -88,5 +89,35 @@ describe('Tests', () => {
     cy.get('[data-test="test-list-entry"]').click({ force: true });
     cy.wait(500);
     cy.url().should('contain', '/tests/');
+  });
+
+  it('User can delete a test', () => {
+    const user = new User();
+    const project = new Project();
+    const test = new Test();
+
+    cy.visit('/');
+    cy.registerNewUser(user);
+    cy.login(user);
+    cy.createProject(project);
+    cy.wait(500);
+    cy.get('[data-test="project-card"]').click({ force: true });
+    cy.wait(500);
+    cy.createTest(test);
+    cy.wait(500);
+    cy.get(ProjectPage.VIEW_TESTS_BUTTON).click();
+    cy.get('[data-test="test-subject"]').should('have.length', 1);
+    cy.get('[data-test="test-list-entry"]').click({ force: true });
+    cy.wait(500);
+    cy.url().should('contain', '/tests/');
+    cy.get(TestPage.DELETE_TEST_BUTTON).click();
+    cy.wait(1000);
+    cy.url().should('contain', '/confirm');
+    cy.get(Confirm.DELETE_BUTTON).click();
+    cy.wait(1000);
+    // cy.url().should('contain', '/dashboard');
+    // cy.get('[data-test="project-name"]').should('have.length', 0);
+
+    cy.get(Nav.LOGOUT).click();
   });
 });

@@ -14,6 +14,8 @@ import Register from '../elements/register';
 import Home from '../elements/home';
 import Toolbar from '../elements/toolbar';
 import NewProject from '../elements/newProject';
+import NewTest from '../elements/newTest';
+import ProjectPage from '../elements/project';
 //
 // -- This is a parent command --
 // Cypress.Commands.add("login", (email, password) => { ... })
@@ -48,6 +50,16 @@ Cypress.Commands.add('createProject', (project) => {
   // cy.url().should('contain', 'projects/new');
   cy.get(NewProject.NAME).type(project.name);
   cy.get(NewProject.SUBMIT).click();
+});
+
+Cypress.Commands.add('createTest', (test) => {
+  cy.url().should('contain', '/projects/');
+  cy.get(ProjectPage.CREATE_TEST_BUTTON).click();
+  cy.wait(1000);
+  cy.url().should('contain', '/tests/new');
+  cy.get(NewTest.SUBJECT).type(test.subject);
+  cy.get(NewTest.DESCRIPTION).type(test.description);
+  cy.get(NewTest.SUBMIT).click();
 });
 
 //

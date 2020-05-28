@@ -80,6 +80,9 @@ const useForm = (callback) => {
       case 'deleteProject':
         deleteProject();
         break;
+      case 'deleteTest':
+        deleteTest();
+        break;
     }
   };
 
@@ -98,6 +101,16 @@ const useForm = (callback) => {
       if (res.status === 200) {
         clearForm();
         setData(res.data);
+        setGlobal({ ...global, currentProject: null });
+      }
+    });
+  };
+  const deleteTest = () => {
+    API.deleteTest(global.currentTest).then((res) => {
+      if (res.status === 200) {
+        clearForm();
+        setData(res.data);
+        setGlobal({ ...global, currentTest: null });
       }
     });
   };

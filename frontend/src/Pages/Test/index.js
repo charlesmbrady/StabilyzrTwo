@@ -12,7 +12,7 @@ export default function Test({ match }) {
   return (
     <div className='test'>
       {isLoading && <Mask />}
-      {/* {data && <Toolbar name={data.name} projectId={match.params.project} />} */}
+      {data && <Toolbar testId={data.id} projectId={match.params.project} />}
       {data && <div className='testDetails'>Test Details:{data.subject}</div>}
     </div>
   );

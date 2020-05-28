@@ -56,4 +56,9 @@ export default {
       throw err;
     });
   },
+  deleteTest: function (id) {
+    return axios.delete(`/api/tests/${id}`).catch((err) => {
+      throw err;
+    });
+  },
 };

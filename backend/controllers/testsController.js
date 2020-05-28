@@ -17,16 +17,15 @@ module.exports = {
       });
   },
   getById: function (req, res) {
-    db.Test.findAll({
+    db.Test.findOne({
       where: {
-        UserId: req.body.UserId,
+        id: req.params.id,
       },
-    }).then((dbTests, err) => {
+    }).then((dbTest, err) => {
       if (err) {
         res.status(500).send(err);
       }
-      dbTests.filter((test) => test.id == req.params.id);
-      res.json(dbTests[0]);
+      res.json(dbTest);
     });
   },
   getAllByProjectId: function (req, res) {

@@ -8,11 +8,11 @@
   --success: #00b989;
 }
 
-.projectCard {
+.testEntry {
   box-shadow: 0px 5px 5px lightgray;
   background: white;
-  width: 300px;
-  height: 400px;
+  /* width: 300px; */
+  /* height: 400px; */
   margin-top: 15px;
   margin-bottom: 15px;
   border: none;
@@ -21,7 +21,7 @@
   padding: 20px;
 }
 
-.projectCard:hover {
+.testEntry:hover {
   box-shadow: 2px 5px 10px black;
   transition-duration: 300ms;
 }

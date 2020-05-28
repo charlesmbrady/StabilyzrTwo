@@ -51,4 +51,9 @@ export default {
       throw err;
     });
   },
+  getTestById: function (id) {
+    return axios.get(`/api/tests/${id}`).catch((err) => {
+      throw err;
+    });
+  },
 };

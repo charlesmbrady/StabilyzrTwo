@@ -2,7 +2,7 @@ import './style.css';
 import React from 'react';
 import useApi from '../../../../Hooks/useApi';
 import { Link } from 'react-router-dom';
-import ProjectCard from './ProjectCard';
+import TestEntry from './TestEntry';
 import API from '../../../../Utilities/API';
 import Mask from '../../../../GenericComponents/Mask';
 
@@ -16,10 +16,13 @@ export default function TestsList({ match }) {
     <div className='testsList'>
       {isLoading && <Mask />}
       {data &&
-        data.map((project, i) => (
+        data.map((test, i) => (
           <div>
-            <Link to={`/projects/${project.id}`} data-test={`project-card`}>
-              <ProjectCard data={project} key={i} />
+            <Link
+              to={`/projects/${match.params.project}/tests/${test.id}`}
+              data-test={`test-list-entry`}
+            >
+              <TestEntry data={test} key={i} />
             </Link>
           </div>
         ))}

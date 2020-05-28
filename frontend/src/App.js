@@ -22,6 +22,7 @@ import NewProject from './Pages/NewProject';
 import Project from './Pages/Project';
 import NewTest from './Pages/NewTest';
 import Tests from './Pages/Tests';
+import Test from './Pages/Test';
 
 export default function App() {
   const [isLoading, data, error] = useApi(API.checkToken);
@@ -105,9 +106,11 @@ export default function App() {
                     path='/projects/:project/tests'
                     component={Tests}
                   />
-                  {/* <PrivateRoute exact path='/projects/:project/tests/:id'>
-                    <Test />
-                  </PrivateRoute>{' '} */}
+                  <Route
+                    exact
+                    path='/projects/:project/tests/:test'
+                    component={Test}
+                  />
                 </Switch>
               </div>
             </Router>

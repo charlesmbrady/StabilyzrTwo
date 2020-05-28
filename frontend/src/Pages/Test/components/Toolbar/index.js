@@ -10,7 +10,7 @@ export default function Toolbar({ testId, projectId }) {
       <Link
         className='toolbarLink'
         data-test='delete-test-button'
-        to={`/projects/${projectId}/test/${testId}confirm`}
+        to={`/projects/${projectId}/tests/${testId}/confirm`}
       >
         Delete Test
       </Link>

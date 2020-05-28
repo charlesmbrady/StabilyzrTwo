@@ -115,8 +115,8 @@ describe('Tests', () => {
     cy.url().should('contain', '/confirm');
     cy.get(Confirm.DELETE_BUTTON).click();
     cy.wait(1000);
-    // cy.url().should('contain', '/dashboard');
-    // cy.get('[data-test="project-name"]').should('have.length', 0);
+    cy.url().should('contain', '/tests');
+    cy.get('[data-test="test-list-item"]').should('have.length', 0);
 
     cy.get(Nav.LOGOUT).click();
   });

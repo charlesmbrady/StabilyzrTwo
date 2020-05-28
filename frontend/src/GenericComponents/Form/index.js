@@ -1,8 +1,9 @@
 import './style.css';
-import React from 'react';
+import React, { useContext } from 'react';
 import useForm from '../../Hooks/useForm';
 import Mask from '../Mask';
 import { Redirect } from 'react-router-dom';
+import { GlobalContext } from '../../Contexts/GlobalContext';
 
 export default function Form({
   children,
@@ -10,16 +11,20 @@ export default function Form({
   className,
   currentProject,
 }) {
+  const { global, setGlobal } = useContext(GlobalContext);
   const { handleSubmit, isSubmitting, data } = useForm(submitFunction);
 
   if (submitFunction == 'createProject' && data) {
     return <Redirect to='/dashboard' />;
   }
   if (submitFunction == 'createTest' && data) {
-    return <Redirect to={`/projects/${currentProject}`} />;
+    return <Redirect to={`/projects/${global.currentProject}`} />;
   }
   if (submitFunction == 'deleteProject' && data) {
     return <Redirect to={`/dashboard`} />;
+  }
+  if (submitFunction == 'deleteTest' && data) {
+    return <Redirect to={`/projects/${global.currentProject}/tests`} />;
   }
 
   return (

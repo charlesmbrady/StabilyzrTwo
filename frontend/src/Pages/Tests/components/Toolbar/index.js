@@ -6,13 +6,13 @@ import UnevenTrack from '../../../../GenericComponents/UnevenHTrack';
 export default function Toolbar() {
   return (
     <UnevenTrack className='dashboardToolbar'>
-      <h1>Projects</h1>
+      <h1>Tests</h1>
       <Link
         className='toolbarLink'
         data-test='toolbar-create-project-button'
         to='/projects/new'
       >
-        New Project
+        New Test
       </Link>
     </UnevenTrack>
   );

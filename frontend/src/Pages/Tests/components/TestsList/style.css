@@ -8,16 +8,16 @@
   --success: #00b989;
 }
 
-.projectsList {
+.testsList {
   width: 98%;
   background: var(--main-color);
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  /* display: grid; */
+  /* grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); */
   justify-items: center;
-  grid-auto-flow: row;
-  grid-gap: 2rem;
+  /* grid-auto-flow: row; */
+  /* grid-gap: 2rem; */
   /* height: 100vh; */
   border: none;
-  border-radius: 10px;
+  /* border-radius: 10px; */
 }

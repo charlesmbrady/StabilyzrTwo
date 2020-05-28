@@ -5,7 +5,7 @@ import TestsList from './components/TestsList';
 export default function Tests({ match }) {
   return (
     <div className='testsContainer'>
-      <Toolbar />
+      <Toolbar projectId={match.params.project} />
       <TestsList match={match} />
     </div>
   );

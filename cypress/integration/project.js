@@ -89,4 +89,26 @@ describe('Projects', () => {
 
     cy.get(Nav.LOGOUT).click();
   });
+
+  it('User can edit a project', () => {
+    const user = new User();
+    const project = new Project();
+    const updateText = 'updated';
+
+    cy.visit('/');
+    cy.registerNewUser(user);
+    cy.login(user);
+    cy.createProject(project);
+    cy.wait(500);
+    cy.get('[data-test="project-card"]').click({ force: true });
+    cy.wait(500);
+    cy.get(ProjectPage.NAME).should('have.value', project.name);
+    cy.get(ProjectPage.NAME).type(updateText);
+    cy.get(ProjectPage.SUBMIT).click();
+    cy.get(Nav.DASHBOARD).click();
+    cy.get('[data-test="project-card"]').click({ force: true });
+    cy.get(ProjectPage.NAME).should('have.value', project.name + updateText);
+
+    cy.get(Nav.LOGOUT).click();
+  });
 });

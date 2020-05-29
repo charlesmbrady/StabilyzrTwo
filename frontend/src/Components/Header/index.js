@@ -71,6 +71,7 @@ export default function Header({ className }) {
         {user.isAuthenticated && (
           <Link
             className='headerLink'
+            data-test='dashboard'
             to='/dashboard'
             onClick={() => clearForm()}
           >

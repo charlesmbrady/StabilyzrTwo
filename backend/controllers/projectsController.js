@@ -42,29 +42,17 @@ module.exports = {
     });
   },
   updateById: function (req, res) {
-    db.Project.findAll({
+    db.Project.update(req.body, {
       where: {
-        UserId: req.body.UserId,
+        id: req.params.id,
       },
-    }).then((dbProjects, err) => {
-      if (err) {
-        res.status(500).send(err);
-      }
-      dbProjects.filter((project) => project.id == req.params.id);
-      if (dbProjects[0]) {
-        db.Project.update(req.body, {
-          where: {
-            id: req.params.id,
-          },
-        })
-          .then((newDbProject) => {
-            if (newDbProject) {
-              res.json(newDbProject);
-            }
-          })
-          .catch((err) => res.json(err));
-      }
-    });
+    })
+      .then((newDbProject) => {
+        if (newDbProject) {
+          res.json(newDbProject);
+        }
+      })
+      .catch((err) => res.json(err));
   },
   deleteById: (req, res) => {
     db.Project.destroy({

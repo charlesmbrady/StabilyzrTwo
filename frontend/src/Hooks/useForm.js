@@ -83,12 +83,40 @@ const useForm = (callback) => {
       case 'deleteTest':
         deleteTest();
         break;
+      case 'updateProject':
+        updateProject();
+        break;
+      case 'updateTest':
+        updateTest();
+        break;
     }
   };
 
   const createProject = () => {
     API.createProject({
       name: formValues.projectName,
+    }).then((res) => {
+      if (res.status === 200) {
+        clearForm();
+        setData(res.data);
+      }
+    });
+  };
+  const updateProject = () => {
+    API.updateProject({
+      id: global.currentProject,
+      name: formValues.projectName,
+    }).then((res) => {
+      if (res.status === 200) {
+        clearForm();
+        setData(res.data);
+      }
+    });
+  };
+  const updateTest = () => {
+    API.updateTest({
+      id: global.currentTest,
+      subject: formValues.testSubject,
     }).then((res) => {
       if (res.status === 200) {
         clearForm();

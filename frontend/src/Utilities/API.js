@@ -41,6 +41,11 @@ export default {
       throw err;
     });
   },
+  updateProject: function (project) {
+    return axios.put(`/api/projects/${project.id}`, project).catch((err) => {
+      throw err;
+    });
+  },
   deleteProject: function (id) {
     return axios.delete(`/api/projects/${id}`).catch((err) => {
       throw err;
@@ -53,6 +58,11 @@ export default {
   },
   getTestById: function (id) {
     return axios.get(`/api/tests/${id}`).catch((err) => {
+      throw err;
+    });
+  },
+  updateTest: function (test) {
+    return axios.put(`/api/tests/${test.id}`, test).catch((err) => {
       throw err;
     });
   },

@@ -117,6 +117,10 @@ const useForm = (callback) => {
     API.updateTest({
       id: global.currentTest,
       subject: formValues.testSubject,
+      description: formValues.testDescription,
+      steps: formValues.testSteps,
+      status: formValues.testStatus,
+      type: formValues.testType,
     }).then((res) => {
       if (res.status === 200) {
         clearForm();
@@ -145,6 +149,10 @@ const useForm = (callback) => {
   const createTest = () => {
     API.createTest({
       subject: formValues.testSubject,
+      description: formValues.testDescription,
+      steps: formValues.testSteps,
+      status: formValues.testStatus,
+      type: formValues.testType,
       ProjectId: parseInt(global.currentProject),
     }).then((res) => {
       if (res.status === 200) {

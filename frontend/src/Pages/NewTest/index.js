@@ -29,11 +29,19 @@ export default function NewTest({ match }) {
           placeholder='Enter a subject for this test'
         />
         <FieldGroup
-          type='text'
+          type='textArea'
           label='Description'
           name='testDescription'
           placeholder='Enter a description for this test'
         />
+        <FieldGroup
+          type='textArea'
+          label='Steps'
+          name='testSteps'
+          placeholder='Enter steps for this test'
+        />
+        <FieldGroup type='select' label='Type' name='testType' />
+        <FieldGroup type='select' label='Status' name='testStatus' />
         <SubmitButton className='create-project-footer create-project-submit-button'>
           Submit
         </SubmitButton>

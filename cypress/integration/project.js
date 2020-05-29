@@ -90,7 +90,7 @@ describe('Projects', () => {
     cy.get(Nav.LOGOUT).click();
   });
 
-  it.only('User can edit a project', () => {
+  it('User can edit a project', () => {
     const user = new User();
     const project = new Project();
     const updateText = 'updated';

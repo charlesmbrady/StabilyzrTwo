@@ -89,6 +89,7 @@ describe('Tests', () => {
     cy.get('[data-test="test-list-entry"]').click({ force: true });
     cy.wait(500);
     cy.url().should('contain', '/tests/');
+    cy.get(Nav.LOGOUT).click();
   });
 
   it('User can delete a test', () => {
@@ -119,5 +120,33 @@ describe('Tests', () => {
     cy.get('[data-test="test-list-item"]').should('have.length', 0);
 
     cy.get(Nav.LOGOUT).click();
+  });
+
+  it.only('User can edit a test cases details', () => {
+    const user = new User();
+    const project = new Project();
+    const test = new Test();
+    const updateText = 'updated';
+
+    cy.visit('/');
+    cy.registerNewUser(user);
+    cy.login(user);
+    cy.createProject(project);
+    cy.wait(500);
+    cy.get('[data-test="project-card"]').click({ force: true });
+    cy.wait(500);
+    cy.createTest(test);
+    cy.wait(500);
+    cy.get(ProjectPage.VIEW_TESTS_BUTTON).click();
+    cy.get('[data-test="test-list-entry"]').click({ force: true });
+    cy.wait(500);
+    cy.get(TestPage.SUBJECT).should('have.value', test.subject);
+    cy.get(TestPage.SUBJECT).type(updateText);
+    cy.get(TestPage.SUBMIT).click();
+    cy.get(Nav.DASHBOARD).click();
+    cy.get('[data-test="project-card"]').click({ force: true });
+    cy.get(ProjectPage.VIEW_TESTS_BUTTON).click();
+    cy.get('[data-test="test-list-entry"]').click({ force: true });
+    cy.get(TestPage.SUBJECT).should('have.value', test.subject + updateText);
   });
 });

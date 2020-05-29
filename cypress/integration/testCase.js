@@ -122,7 +122,7 @@ describe('Tests', () => {
     cy.get(Nav.LOGOUT).click();
   });
 
-  it.only('User can edit a test cases details', () => {
+  it('User can edit a test cases details', () => {
     const user = new User();
     const project = new Project();
     const test = new Test();

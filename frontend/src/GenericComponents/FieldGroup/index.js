@@ -52,6 +52,54 @@ export default function FieldGroup({
         />
       );
       break;
+    case 'textArea':
+      input = (
+        <textarea
+          name={name}
+          className={formErrors[name] ? 'invalidInput' : 'input'}
+          value={formValues[name]}
+          onChange={handleChange}
+          data-test={`${name}-input`}
+        ></textarea>
+      );
+      break;
+    case 'select':
+      let options;
+      switch (name) {
+        case 'testStatus':
+          input = (
+            <select
+              name={name}
+              value={formValues[name]}
+              onChange={handleChange}
+              data-test={`${name}-input`}
+              className={formErrors[name] ? 'invalidInput' : 'input'}
+            >
+              <option value=''>--Please choose an option--</option>
+              <option value='unwritten'>Unwritten</option>
+              <option value='manual'>Manual</option>
+              <option value='automated'>Automated</option>
+            </select>
+          );
+          break;
+        case 'testType':
+          input = (
+            <select
+              name={name}
+              value={formValues[name]}
+              onChange={handleChange}
+              data-test={`${name}-input`}
+              className={formErrors[name] ? 'invalidInput' : 'input'}
+            >
+              <option value=''>--Please choose an option--</option>
+              <option value='api'>API</option>
+              <option value='unit'>Unit</option>
+              <option value='e2e'>E2E</option>
+            </select>
+          );
+          break;
+      }
+      break;
   }
 
   return (

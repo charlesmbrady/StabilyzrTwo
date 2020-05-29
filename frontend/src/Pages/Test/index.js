@@ -28,6 +28,10 @@ export default function Test({ match }) {
       setFormValues({
         ...formValues,
         testSubject: data.subject,
+        testDescription: data.description,
+        testSteps: data.steps,
+        testStatus: data.status,
+        testType: data.type,
       });
     }
   }, [data]);
@@ -39,7 +43,26 @@ export default function Test({ match }) {
       {data && <h2 className='testDetails'>Test Details:</h2>}
       {data && (
         <Form className='edit-test-form' submitFunction='updateTest'>
-          <FieldGroup type='text' label='Subject' name='testSubject' />
+          <FieldGroup
+            type='text'
+            label='Subject'
+            name='testSubject'
+            placeholder='Enter a subject for this test'
+          />
+          <FieldGroup
+            type='textArea'
+            label='Description'
+            name='testDescription'
+            placeholder='Enter a description for this test'
+          />
+          <FieldGroup
+            type='textArea'
+            label='Steps'
+            name='testSteps'
+            placeholder='Enter steps for this test'
+          />
+          <FieldGroup type='select' label='Type' name='testType' />
+          <FieldGroup type='select' label='Status' name='testStatus' />
           <SubmitButton className='edit-test-footer edit-test-submit-button'>
             Save
           </SubmitButton>

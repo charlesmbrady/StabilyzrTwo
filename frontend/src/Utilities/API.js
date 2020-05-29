@@ -61,6 +61,11 @@ export default {
       throw err;
     });
   },
+  updateTest: function (test) {
+    return axios.put(`/api/tests/${test.id}`, test).catch((err) => {
+      throw err;
+    });
+  },
   deleteTest: function (id) {
     return axios.delete(`/api/tests/${id}`).catch((err) => {
       throw err;

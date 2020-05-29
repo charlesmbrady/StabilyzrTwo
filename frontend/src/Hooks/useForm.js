@@ -86,6 +86,9 @@ const useForm = (callback) => {
       case 'updateProject':
         updateProject();
         break;
+      case 'updateTest':
+        updateTest();
+        break;
     }
   };
 
@@ -103,6 +106,17 @@ const useForm = (callback) => {
     API.updateProject({
       id: global.currentProject,
       name: formValues.projectName,
+    }).then((res) => {
+      if (res.status === 200) {
+        clearForm();
+        setData(res.data);
+      }
+    });
+  };
+  const updateTest = () => {
+    API.updateTest({
+      id: global.currentTest,
+      subject: formValues.testSubject,
     }).then((res) => {
       if (res.status === 200) {
         clearForm();

@@ -41,29 +41,17 @@ module.exports = {
     });
   },
   updateById: function (req, res) {
-    db.Test.findAll({
+    db.Test.update(req.body, {
       where: {
-        UserId: req.body.UserId,
+        id: req.params.id,
       },
-    }).then((dbTests, err) => {
-      if (err) {
-        res.status(500).send(err);
-      }
-      dbTests.filter((test) => test.id == req.params.id);
-      if (dbTests[0]) {
-        db.Test.update(req.body, {
-          where: {
-            id: req.params.id,
-          },
-        })
-          .then((newDbTest) => {
-            if (newDbTest) {
-              res.json(newDbTest);
-            }
-          })
-          .catch((err) => res.json(err));
-      }
-    });
+    })
+      .then((newDbTest) => {
+        if (newDbTest) {
+          res.json(newDbTest);
+        }
+      })
+      .catch((err) => res.json(err));
   },
   deleteById: (req, res) => {
     db.Test.destroy({

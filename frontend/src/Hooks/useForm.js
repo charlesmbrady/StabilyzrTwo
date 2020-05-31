@@ -207,6 +207,8 @@ const useForm = (callback) => {
     // if not, call our callback
     if (isSubmitting) {
       executeCallback(callback);
+    } else {
+      setGlobal({ ...global, isSubmitting: false });
     }
   }, [formErrors]);
 

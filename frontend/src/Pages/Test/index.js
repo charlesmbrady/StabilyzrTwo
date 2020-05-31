@@ -40,7 +40,7 @@ export default function Test({ match }) {
     <div className='test'>
       {isLoading && <Mask />}
       {data && <Toolbar testId={data.id} projectId={match.params.project} />}
-      {data && <h2 className='testDetails'>Test Details:</h2>}
+      {/* {data && <h2 className='testDetails'>Test Details:</h2>} */}
       {data && (
         <Form className='edit-test-form' submitFunction='updateTest'>
           <FieldGroup

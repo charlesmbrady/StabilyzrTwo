@@ -8,8 +8,11 @@
   --success: #00b989;
 }
 
-.newProject {
-  /* display: grid; */
-  /* height: 100vh; */
-  /* overflow: scroll; */
+.delete-confirm-submit-button {
+  background: red;
+  width: 80px;
+  margin: 0 auto;
+}
+.delete-confirm-submit-button:hover {
+  background: rgb(211, 0, 0);
 }

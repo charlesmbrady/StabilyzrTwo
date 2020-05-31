@@ -1,0 +1,15 @@
+.toolbarLink {
+  text-decoration: none;
+  margin-left: 20px;
+  text-align: center;
+}
+
+.icon {
+  height: 25px;
+  width: auto;
+}
+
+.edit-project-submit-button {
+  width: 80px;
+  margin: 0 auto;
+}

@@ -83,21 +83,21 @@
     {
       "path": "cypress/reports/integration/public/report-tree-listing.json",
       "name": "report-tree-listing.json",
-      "size": 5068,
+      "size": 6102,
       "extension": ".json",
       "type": "file"
     },
     {
       "path": "cypress/reports/integration/public/report.html",
       "name": "report.html",
-      "size": 30459,
+      "size": 35190,
       "extension": ".html",
       "type": "file"
     },
     {
       "path": "cypress/reports/integration/public/report.json",
       "name": "report.json",
-      "size": 28654,
+      "size": 32362,
       "extension": ".json",
       "type": "file"
     },
@@ -106,58 +106,52 @@
       "name": "screenshots",
       "children": [
         {
-          "path": "cypress/reports/integration/public/screenshots/test-spec.js",
-          "name": "test-spec.js",
+          "path": "cypress/reports/integration/public/screenshots/project.js",
+          "name": "project.js",
           "children": [
             {
-              "path": "cypress/reports/integration/public/screenshots/test-spec.js/Users -- Can authenticate user (failed).png",
-              "name": "Users -- Can authenticate user (failed).png",
-              "size": 187244,
-              "extension": ".png",
-              "type": "file"
-            },
-            {
-              "path": "cypress/reports/integration/public/screenshots/test-spec.js/Users -- Can create user (failed).png",
-              "name": "Users -- Can create user (failed).png",
-              "size": 95632,
-              "extension": ".png",
-              "type": "file"
-            },
-            {
-              "path": "cypress/reports/integration/public/screenshots/test-spec.js/can visit homepage -- after all hook collectBackendCoverage (failed).png",
-              "name": "can visit homepage -- after all hook collectBackendCoverage (failed).png",
-              "size": 145976,
+              "path": "cypress/reports/integration/public/screenshots/project.js/User can create a new project -- after all hook generateReport (failed).png",
+              "name": "User can create a new project -- after all hook generateReport (failed).png",
+              "size": 126213,
               "extension": ".png",
               "type": "file"
             }
           ],
-          "size": 428852,
+          "size": 126213,
           "type": "directory"
         },
         {
-          "path": "cypress/reports/integration/public/screenshots/test.js",
-          "name": "test.js",
+          "path": "cypress/reports/integration/public/screenshots/testCase.js",
+          "name": "testCase.js",
           "children": [
             {
-              "path": "cypress/reports/integration/public/screenshots/test.js/Can create user -- after all hook collectBackendCoverage (failed).png",
-              "name": "Can create user -- after all hook collectBackendCoverage (failed).png",
-              "size": 145148,
-              "extension": ".png",
-              "type": "file"
-            },
-            {
-              "path": "cypress/reports/integration/public/screenshots/test.js/Users -- Can logout (failed).png",
-              "name": "Users -- Can logout (failed).png",
-              "size": 127938,
+              "path": "cypress/reports/integration/public/screenshots/testCase.js/User can create test for project -- after all hook generateReport (failed).png",
+              "name": "User can create test for project -- after all hook generateReport (failed).png",
+              "size": 136574,
               "extension": ".png",
               "type": "file"
             }
           ],
-          "size": 273086,
+          "size": 136574,
+          "type": "directory"
+        },
+        {
+          "path": "cypress/reports/integration/public/screenshots/user.js",
+          "name": "user.js",
+          "children": [
+            {
+              "path": "cypress/reports/integration/public/screenshots/user.js/User can register for new account -- after all hook generateReport (failed).png",
+              "name": "User can register for new account -- after all hook generateReport (failed).png",
+              "size": 120176,
+              "extension": ".png",
+              "type": "file"
+            }
+          ],
+          "size": 120176,
           "type": "directory"
         }
       ],
-      "size": 701938,
+      "size": 382963,
       "type": "directory"
     },
     {
@@ -165,24 +159,31 @@
       "name": "videos",
       "children": [
         {
-          "path": "cypress/reports/integration/public/videos/test-spec.js.mp4",
-          "name": "test-spec.js.mp4",
-          "size": 672905,
+          "path": "cypress/reports/integration/public/videos/project.js.mp4",
+          "name": "project.js.mp4",
+          "size": 3945010,
           "extension": ".mp4",
           "type": "file"
         },
         {
-          "path": "cypress/reports/integration/public/videos/test.js.mp4",
-          "name": "test.js.mp4",
-          "size": 833192,
+          "path": "cypress/reports/integration/public/videos/testCase.js.mp4",
+          "name": "testCase.js.mp4",
+          "size": 8865108,
+          "extension": ".mp4",
+          "type": "file"
+        },
+        {
+          "path": "cypress/reports/integration/public/videos/user.js.mp4",
+          "name": "user.js.mp4",
+          "size": 665810,
           "extension": ".mp4",
           "type": "file"
         }
       ],
-      "size": 1506097,
+      "size": 13475928,
       "type": "directory"
     }
   ],
-  "size": 2964095,
+  "size": 14624424,
   "type": "directory"
 }

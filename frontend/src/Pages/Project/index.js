@@ -34,7 +34,7 @@ export default function Project({ match }) {
     <div className='project'>
       {isLoading && <Mask />}
       {data && <Toolbar name={data.name} projectId={match.params.project} />}
-      {data && <h2 className='projectDetails'>Project Details:</h2>}
+      {/* {data && <h2 className='projectDetails'>Project Details:</h2>} */}
       {data && (
         <Form className='edit-project-form' submitFunction='updateProject'>
           <FieldGroup

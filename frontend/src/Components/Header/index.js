@@ -80,7 +80,7 @@ export default function Header({ className }) {
         )}
         {user.isAuthenticated && (
           <button
-            className='headerLink'
+            className='headerLink logoutButton'
             data-test='logout-button'
             onClick={() => logout()}
           >

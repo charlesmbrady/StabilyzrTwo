@@ -12,7 +12,9 @@ export default function Form({
   currentProject,
 }) {
   const { global, setGlobal } = useContext(GlobalContext);
-  const { handleSubmit, isSubmitting, data } = useForm(submitFunction);
+  const { handleSubmit, isSubmitting, data, formErrors } = useForm(
+    submitFunction
+  );
 
   if (submitFunction == 'createProject' && data) {
     return <Redirect to='/dashboard' />;
@@ -30,7 +32,6 @@ export default function Form({
   return (
     <div>
       <form className={`${className} form`} onSubmit={handleSubmit} noValidate>
-        {isSubmitting && <Mask />}
         {children}
       </form>
     </div>

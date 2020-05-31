@@ -19,7 +19,7 @@ html,
   margin: 0 auto;
   box-sizing: border-box;
   font-family: 'Hind', sans-serif;
-  background-color: var(--main-color);
+  background: white;
 }
 
 .main-container {

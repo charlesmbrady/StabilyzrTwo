@@ -1,7 +1,19 @@
 .mask {
   position: fixed;
+  top: 0;
+  right: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.424);
   z-index: 10;
+  display: grid;
+}
+
+.loader {
+  color: white;
+  width: 20%;
+  height: 20%;
+  margin: 0 auto;
+  justify-content: center;
+  vertical-align: center;
 }

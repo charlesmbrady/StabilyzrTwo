@@ -15,6 +15,10 @@ export default function TestsList({ match }) {
   return (
     <div className='testsList'>
       {isLoading && <Mask />}
+      {!data ||
+        (data.length == 0 && (
+          <p>You have not written any tests for this project yet!</p>
+        ))}
       {data &&
         data.map((test, i) => (
           <div>

@@ -10,7 +10,7 @@
 
 .projectsList {
   width: 98%;
-  background: var(--main-color);
+  background: lightgray;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -20,4 +20,8 @@
   /* height: 100vh; */
   border: none;
   border-radius: 10px;
+}
+
+.projectLink {
+  text-decoration: none;
 }

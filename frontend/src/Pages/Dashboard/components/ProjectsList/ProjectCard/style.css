@@ -16,7 +16,7 @@
   margin-top: 15px;
   margin-bottom: 15px;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
   box-shadow: 1px 2px 5px black;
   padding: 20px;
 }
@@ -24,4 +24,10 @@
 .projectCard:hover {
   box-shadow: 2px 5px 10px black;
   transition-duration: 300ms;
+}
+
+.projectName {
+  text-align: center;
+  margin: 0 auto;
+  color: black;
 }

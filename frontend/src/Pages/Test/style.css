@@ -13,3 +13,8 @@
   /* height: 100vh; */
   /* overflow: scroll; */
 }
+
+.edit-test-submit-button {
+  width: 80px;
+  margin: 0 auto;
+}

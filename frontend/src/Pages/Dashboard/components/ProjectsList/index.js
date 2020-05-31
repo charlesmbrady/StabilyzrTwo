@@ -15,7 +15,11 @@ export default function ProjectsList() {
       {data &&
         data.map((project, i) => (
           <div>
-            <Link to={`/projects/${project.id}`} data-test={`project-card`}>
+            <Link
+              className='projectLink'
+              to={`/projects/${project.id}`}
+              data-test={`project-card`}
+            >
               <ProjectCard data={project} key={i} />
             </Link>
           </div>

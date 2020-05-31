@@ -9,5 +9,10 @@
 }
 
 .dashboardToolbar {
-  background: var(--main-color);
+  background: white !important;
+}
+
+.toolbar {
+  padding-left: 20px;
+  padding-right: 20px;
 }

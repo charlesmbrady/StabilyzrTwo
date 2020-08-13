@@ -54,7 +54,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/charlesmbrady/StabilyzrTwo.git"
+    "url": "git+https://github.com/charlesmbrady/stabilyzr-two.git"
   },
   "keywords": [
     "MERN",
@@ -73,9 +73,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/charlesmbrady/StabilyzrTwo/issues"
+    "url": "https://github.com/charlesmbrady/stabilyzr-two/issues"
   },
-  "homepage": "https://github.com/charlesmbrady/StabilyzrTwo#readme",
+  "homepage": "https://github.com/charlesmbrady/stabilyzr-two#readme",
   "devDependencies": {
     "@cypress/code-coverage": "^1.14.0",
     "cy-report-setup-helper": "^1.3.4",

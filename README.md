@@ -54,7 +54,7 @@ MySQL-Express-React-Node app with custom webpack config, docker, CI config, test
 
 - To deploy whatever is on your git master branch again later, use command `git push staging master` or `git push production master` depending on which environment you want to deploy
 
-With a few steps this deployment process can be automated. First, on your local machine, make sure you have the Heroku CLI installed. then run heroku authorizations:create to generate a longterm token. Go to the project settings in circle ci for this project and add environment variables HEROKU_EMAIL and enter your heroku account email, and HEROKU_TOKEN and paste the token you generated.
+With a few steps this deployment process can be automated. First, on your local machine, make sure you have the Heroku CLI installed. then run `heroku authorizations:create` to generate a longterm token. Go to the project settings in circle ci for this project and add environment variables HEROKU_EMAIL and enter your heroku account email, and HEROKU_TOKEN and paste the token you generated.
 
 Make sure your default git branch for this project is called "development" instead of master**\*\***!!!!
 

@@ -1,9 +1,7 @@
+require('dotenv').config();
 const db = require('../models');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-require('dotenv').config();
-const cookieParser = require('cookie-parser'); // for the auth token
-const moment = require('moment');
 
 // Defining methods for the usersController
 module.exports = {

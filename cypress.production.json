@@ -1,7 +1,7 @@
 {
-  "baseUrl": "https://stabilyzr.herokuapp.com",
+  "baseUrl": "https://stabilyzr-two.herokuapp.com",
   "reporter": "./node_modules/mochawesome/src/mochawesome.js",
-  "apiUrl": "https://stabilyzr.herokuapp.com",
+  "apiUrl": "https://stabilyzr-two.herokuapp.com",
   "env": {
     "user_firstName": "Charles",
     "user_lastName": "Brady",

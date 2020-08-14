@@ -1,5 +1,5 @@
 {
-  "name": "Stabilyzr",
+  "name": "StabilyzrTwo",
   "version": "1.0.0",
   "description": "This project is a fullstack javascript application built with Charles' MERN template",
   "main": "backend/server.js",
@@ -54,7 +54,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/charlesmbrady/Stabilyzr.git"
+    "url": "git+https://github.com/charlesmbrady/stabilyzr-two.git"
   },
   "keywords": [
     "MERN",
@@ -73,9 +73,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/charlesmbrady/Stabilyzr/issues"
+    "url": "https://github.com/charlesmbrady/stabilyzr-two/issues"
   },
-  "homepage": "https://github.com/charlesmbrady/Stabilyzr#readme",
+  "homepage": "https://github.com/charlesmbrady/stabilyzr-two#readme",
   "devDependencies": {
     "@cypress/code-coverage": "^1.14.0",
     "cy-report-setup-helper": "^1.3.4",
